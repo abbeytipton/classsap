@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class Sap Teacher Login</title>
+<!-- Link to CSS Stylesheet -->
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Source+Sans+Pro" rel="stylesheet">
+  </head>
+  <body>
+
+<!-- Div with logo, floats left -->
+  <div class="logo">
+      <%= image_tag("logo.png") %>
+  </div>
+
+<!-- Main welcome -->
+<div class="login">
+
+<h1>Hello!</h1>
+
+<!-- Flashes if there are errors with input -->
+  <div class="errors">
+    <% if flash[:login_errors]%>
+    <% flash[:login_errors].each do |error| %>
+    <p><%=error%></p>
+    <%end%>
+    <%end%>
+  </div>
+
+<!-- Flashes if the user tries to visit a page they need to be logged in to see before logging in -->
+  <div class="errors">
+    <% if flash[:danger]%>
+    <% flash[:danger].each do |error| %>
+    <p><%=error%></p>
+    <%end%>
+    <%end%>
+  </div>
+
+  <!-- Hidden div that flashes message upon successful reset of password -->
+  <div class="success">
+  <% if flash[:notice] -%>
+    <p class='notice'><%=h flash[:notice] %></p>
+  <% end -%>
+  </div>
+
+<h2>Let's enter your login information:</h2>
+
+<!-- Input boxes and buttons for teachers to enter username and password and login -->
+<%= form_for(:session, url: login_path) do |f| %>
+  <h3>Username (Email):</h3>
+  <%= f.email_field :email, class: "input" %>
+  <h3>Password: </h3>
+  <%= f.password_field :password, class: "input" %>
+  <%= f.submit "Log in", class: "submit", id: "tlogin" %>
+<% end %>
+
+<!-- Link to reset password or sign up for new account -->
+  <h3><div class="loginLinks"><%= link_to 'Forgot password?', new_password_reset_path %><br> <a href="/pages/newaccount">Sign up!</a></div></h3>
+  </div>
+
+</body>
+
+<!-- Footer -->
+  <div class="footer flexFooter">
+    <div class="left">
+      <p class="footerP">&#169; 2019 Class Sap</p>
+    </div>
+    <div class="middle">
+      <a href="https://github.com/abbeytipton/class_sap" target="new"><%= image_tag("github.png") %></a>
+    </div>
+    <div class="right">
+      <p class="footerP"><a href="/pages/about">Learn More</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/support">Contact Us</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/faq">FAQ</a>&nbsp;&nbsp;||&nbsp;&nbsp;classsapofficial@gmail.com</p>
+    </div>
+  </div>
+
+</html>

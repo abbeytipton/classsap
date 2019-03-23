@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class Sap for Teachers</title>
+<!-- Link to CSS Stylesheet -->
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Source+Sans+Pro" rel="stylesheet">
+  </head>
+  <body>
+
+<!-- Div with logo, floats left -->
+  <div class="logo">
+      <%= image_tag("logo.png") %>
+  </div>
+
+<!-- Main welcome, username filled in based on login information -->
+<h1>FAQ</h1>
+
+<!-- Flexbox divs for different questions -->
+<div class="flex">
+  <div class="faq">
+    <h2>How do I know when a student has bought something?</h2>
+    <p>Check your alerts! You will get a message with a date and timestamp.</p>
+  </div>
+  <div class="faq">
+    <h2>How do I reset my Class Sap so my students can buy more items?</h2>
+    <p>You don't! They can only buy an item once a week. This will automatically reset on Sundays at 12 PM, and they can then buy more items.</p>
+  </div>
+  <div class="faq">
+    <h2>Can I change a student's password?</h2>
+    <p>Yes, you can. Just head to your edit students page and enter their new password in the box. Their current password won't be displayed for security reasons.</p>
+  </div>
+  <div class="faq">
+    <h2>Why do I need a quantity of items?</h2>
+    <p>Many items will need a quantity, such as a cute pencil or stamp. I also found it made my students more excited to buy something if there were only a few in stock. You are welcome to set the quantity amount as high as you'd like. One will be deleted from the total whenever a student buys that item.</p>
+  </div>
+</div>
+
+</body>
+
+<!-- Footer -->
+  <div class="footer flexFooter">
+    <div class="left">
+      <p class="footerP">&#169; 2019 Class Sap</p>
+    </div>
+    <div class="middle">
+      <a href="https://github.com/abbeytipton/class_sap" target="new"><%= image_tag("github.png") %></a>
+    </div>
+    <div class="right">
+      <p class="footerP"><a href="/pages/about">Learn More</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/support">Contact Us</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/faq">FAQ</a>&nbsp;&nbsp;||&nbsp;&nbsp;classsapofficial@gmail.com</p>
+    </div>
+  </div>
+
+</html>

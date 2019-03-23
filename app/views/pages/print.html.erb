@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class Sap for Teachers</title>
+<!-- Link to CSS Stylesheet -->
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Source+Sans+Pro" rel="stylesheet">
+  </head>
+  <body>
+
+<!-- Current listed in separate divs -->
+
+<div class="flex">
+<% @students = Student.all %>
+<% @students.each do |student| %>
+  <% if student[:teacher_id] == current_user.id %>
+  <div class="printBox">
+    <span class="printBoxSpan"><i class="em em-abc iclass"></i>Name:</span>  <%= student.name %><br/>
+    <span class="printBoxSpan"><i class="em em-computer iclass"></i>Username:</span> <%= student.username %><br/>
+    <span class="printBoxSpan"><i class="em em-closed_lock_with_key iclass"></i>Password:</span> <%= student.password %><br/>
+  </div>
+  <% end %>
+<% end %>
+</div>
+
+</body>
+
+<!-- Footer -->
+  <div class="footer flexFooter">
+    <div class="left">
+      <p class="footerP">&#169; 2019 Class Sap</p>
+    </div>
+    <div class="middle">
+      <a href="https://github.com/abbeytipton/class_sap" target="new"><%= image_tag("github.png") %></a>
+    </div>
+    <div class="right">
+      <p class="footerP"><a href="/pages/about">Learn More</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/support">Contact Us</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/faq">FAQ</a>&nbsp;&nbsp;||&nbsp;&nbsp;classsapofficial@gmail.com</p>
+    </div>
+  </div>
+
+</html>

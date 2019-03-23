@@ -1,0 +1,744 @@
+
+/* Body tags */
+
+html, body {
+    height: 100%;
+}
+
+body {
+  background-color: #1f9e75;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #led2f4;
+  margin: 0;
+}
+
+/* Page tags */
+
+h1 {
+  margin-top: 75px;
+  font-family: 'Patrick Hand', cursive;
+  color: #212121;
+  font-size: 48px;
+}
+
+h2 {
+  color: #000;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+}
+
+h3 {
+  padding: 0;
+  margin: 0 0 0 40px;
+  text-align: left;
+}
+
+h4 {
+  color: #000;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 28px;
+}
+
+h5 {
+  color: #000;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+}
+
+a {
+  color: #000;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-decoration: none;
+}
+
+a::after {
+  color: #4dc4b3;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+label {
+ text-align: left;
+ margin: 10px;
+}
+
+/* Items with this class will not show when screen is small */
+#disappear {
+  display: none;
+}
+
+/* Button styling */
+button, .submit, .submitStudent {
+  background-color: #4dc4b3;
+  padding: 15px;
+  border: 2px solid #2b2b3a;
+  border-radius: 10px;
+  margin: 5px 5px 18px 5px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 32px;
+  cursor: pointer;
+  outline: none;
+}
+
+button, .submit {
+  width: 70%;
+}
+
+.submitStudent {
+  width: 100%;
+}
+
+button:hover {
+  background-color: #1f9e75;
+}
+
+/* Input field styling */
+
+input[type=text], input[type=email], input[type=password], .input {
+  width: 80%;
+  padding: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  margin: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+
+input:focus {
+  border: 2px solid #4dc4b3;
+}
+
+input[type=text].studentUserName, input[type=text].studentPassword  {
+  margin-left: 30px;
+}
+
+input[type=text].pointValueItem, input[type=text].inventory  {
+ margin-left: 30px;
+}
+
+input[type=text].storeItem, input[type=email].storeItem, input[type=password].storeItem, input[type=number]{
+ width: 70%;
+ padding: 15px;
+ font-size: 16px;
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+
+input[type=text].sendText {
+  width: 90%;
+}
+
+textarea:focus {
+  border: 2px solid #4dc4b3;
+}
+
+/* Page styling, organized by page */
+
+/* General */
+
+.logo {
+  display: none;
+}
+
+/* Adds margin to the emojis imported from other website */
+.iclass {
+  margin: 10px;
+}
+
+/* Success and error divs flash for success and error on many pages */
+.success, .errors {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 28px;
+  color: #4dc4b3;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 0;
+  text-decoration: overline underline;
+  -webkit-text-decoration-color: #fff; /* Safari */
+  text-decoration-color: #fff;
+}
+
+/* Flex div makes flex boxes on many pages */
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login pages */
+
+/* Login div is for both slogin and tlogin pages */
+.login {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Soptions style the landing page for students and Toptions for teachers */
+.soptions, .toptions {
+  background-color: #4dc4b3;
+  text-align: center;
+  padding: 25px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.soptions {
+  width: 40%;
+}
+
+.toptions {
+  width: 70%;
+  min-height: 100px;
+}
+
+.soptions:hover, .toptions:hover {
+  background-color: #1f9e75;
+  cursor: pointer;
+}
+
+.loginLinks {
+  text-align: center;
+  margin-right: 5px;
+  width: 90%;
+}
+
+/* FAQ and about pages */
+
+.faq {
+  background-color: #4dc4b3;
+  text-align: center;
+  padding: 25px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+  min-height: 300px;
+  width: 80%;
+}
+
+/* Sign up page */
+
+.signup {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.signup2 {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+/* Points page */
+
+.students {
+  background-color: #4dc4b3;
+  text-align: left;
+  padding: 25px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 80%;
+  min-height: 250px;
+  cursor: pointer;
+}
+
+.give {
+  background-color: #36d869;
+}
+
+.give:active {
+  border: 2px solid black;
+  color: black;
+  -webkit-appearance: none;
+}
+
+.give, .take, .takeBig {
+  border: 2px solid black;
+  border-radius: 8px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 7px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: black;
+  outline: none;
+  cursor: pointer;
+}
+
+.take, .takeBig {
+  background-color: #f45b41;
+}
+
+.take {
+  width: 15%;
+}
+
+.takeBig {
+  width: 35%;
+}
+
+/* Edit students page */
+
+.newStudent {
+  background-color: white;
+  width: 30%;
+  padding: 50px;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  margin: 20px 200px;
+  cursor: pointer;
+}
+
+.studentBtn {
+  background-color: #1f9e75;
+  padding: 10px;
+  border: 2px solid #2b2b3a;
+  border-radius: 10px;
+  margin: 10px auto;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.studentBtn:hover {
+  background-color: #4dc4b3;
+}
+
+.nameSpan {
+  text-decoration: underline;
+  font-size: 24px;
+  margin-right: 5px;
+  padding: 10px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.nameSpan2 {
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 5px;
+  padding: 10px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* Modal for adding new students */
+
+/* The close button */
+
+.close {
+  color: grey;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Outline */
+
+.studentModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Content */
+
+.studentModalContent {
+  margin: 10% auto;
+  padding: 30px;
+  width: 60%;
+  background-color: white;
+  border: 2px solid #2b2b3a;
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+}
+
+/* Edit store page */
+
+.storeItems {
+  background-color: #4dc4b3;
+  width: 70%;
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.store {
+  background-color: #4dc4b3;
+  width: 80%;
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  text-align: left;
+  min-height: 275px;
+}
+
+.storeStudent {
+  background-color: #4dc4b3;
+  width: 70%;
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 250px;
+}
+
+.newItem {
+  background-color: white;
+  width: 30%;
+  padding: 50px;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  margin: 20px 200px;
+  cursor: pointer;
+}
+
+/* Teacher messages page */
+
+.messageTextarea {
+  width: 40%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 10px;
+  height: 250px;
+}
+
+.tmessages {
+  background-color: #4dc4b3;
+  text-align: center;
+  padding: 15px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 80%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Student points page */
+.points {
+  background-color: #4dc4b3;
+  text-align: center;
+  padding: 25px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 70%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 28px;
+}
+
+/* Student store page */
+.buyBtn, .sendBtn {
+  background-color: #1f9e75;
+  padding: 10px;
+  border: 2px solid #2b2b3a;
+  border-radius: 10px;
+  margin: 10px auto;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 28px;
+  cursor: pointer;
+  outline: none;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.buyBtn:hover, .sendBtn:hover {
+  background-color: #4dc4b3;
+}
+
+/* Support page */
+
+.sendText {
+  width: 80%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 10px;
+  height: 200px;
+}
+
+/* Printing page */
+
+.printBox {
+  border: 2px dashed black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  width: 30%;
+  padding: 50px;
+  margin: 20px;
+  text-align: left;
+}
+
+.printBoxSpan {
+  text-decoration: underline;
+  font-size: 28px;
+  margin-right: 5px;
+}
+
+/* Profile page */
+
+.nameSpan3 {
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: left;
+}
+
+.profileBtn {
+  background-color: #1f9e75;
+  padding: 10px;
+  border: 2px solid #2b2b3a;
+  border-radius: 10px;
+  margin: 10px auto;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 24px;
+  cursor: pointer;
+  outline: none;
+  width: 70%;
+  margin-top: 10px;
+}
+
+.profileBtn:hover {
+  background-color: #4dc4b3;
+}
+
+.updateProfile {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+/* Reset password page */
+
+.resetPassword {
+  background-color: #4dc4b3;
+  width: 70%;
+  padding: 20px;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+/* Footer */
+
+.footer {
+  clear: both;
+  position: relative;
+  height: 50px;
+  margin-top: 200px;
+  padding-top: 20px;
+  text-align: center;
+  width: 99%;
+  margin-left: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-top: 2px solid black;
+}
+
+.flexFooter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: start;
+}
+
+img {
+  padding: 0;
+  margin: 0;
+}
+
+.left {
+  width: 20%;
+}
+
+.right {
+  width: 70%;
+}
+
+.middle {
+  display: none;
+}
+
+.footerP {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: #000;
+}
+
+/* Changes styling when screen is 700px or larger */
+@media (min-width: 700px) {
+
+.logo {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 5;
+  margin-right: 20px;
+}
+
+button, .submit {
+  width: 30%;
+}
+
+.login {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.soptions {
+  width: 25%;
+}
+
+.toptions {
+  width: 40%;
+  min-height: 75px;
+}
+
+.points {
+  width: 30%;
+}
+
+.storeStudent {
+  width: 25%;
+}
+
+.storeItems {
+  width: 30%;
+}
+
+.students {
+  width: 40%;
+}
+
+.studentModalContent {
+  width: 35%;
+}
+
+.store {
+  width: 50%;
+}
+
+.tmessages {
+  width: 30%;
+}
+
+.alerts {
+  width: 30%;
+}
+
+input[type=text].storeItem, input[type=email].storeItem, input[type=password].storeItem, input[type=number] {
+  width: 50%;
+}
+
+.profileBtn {
+  width: 50%;
+}
+
+.resetPassword {
+  width: 40%;
+}
+
+.faq {
+  width: 30%;
+}
+
+}
+
+/* Changes styling when screen is 992px or larger */
+@media (min-width: 992px) {
+
+/* Items with this ID will show when screen is large */
+#disappear {
+  display: inherit;
+}
+
+.left, .right {
+  width: 35%;
+}
+
+.middle {
+  display: block;
+  width: 20%;
+}
+
+.footer {
+  clear: both;
+  position: relative;
+  height: 50px;
+  margin-top: 200px;
+  padding-top: 20px;
+  width: 102%;
+  margin-left: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-top: 2px solid black;
+}
+
+.login {
+  width: 40%;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+.students {
+  width: 20%;
+}
+
+.store {
+  width: 30%;
+}
+
+input[type=text].storeItem, input[type=email].storeItem, input[type=password].storeItem, input[type=number] {
+  width: 30%;
+}
+
+.profileBtn {
+  width: 30%;
+}
+
+}

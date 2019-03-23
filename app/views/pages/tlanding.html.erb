@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class Sap for Teachers</title>
+<!-- Link to CSS Stylesheet -->
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Source+Sans+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+<!-- Navigation menu divs and links -->
+<nav role="navigation">
+ <div id="menuToggle">
+    <input type="checkbox">
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="/pages/tlanding"><li>Home</li></a>
+          <a href="/pages/points"><li>Give/Take Points</li></a>
+          <a href="/pages/estudents"><li>Edit Students</li></a>
+          <a href="/pages/estore"><li>Edit Store</li></a>
+          <a href="/pages/tmessages"><li>Message Students</li></a>
+        <!-- Checks to see if messages exist for that teacher and shows badge if they do -->
+          <% if messages %>
+            <a href="/pages/alerts"><li>Alerts<i class="material-icons" style="font-size:32px;color:red">error</i></li></a>
+        <!-- Else shows a normal link -->
+            <% else %><a href="/pages/alerts"><li>Alerts</li></a>
+          <% end %>
+          <a href="/pages/profile"><li>Update Profile</li></a>
+          <a href="/pages/support"><li>Support</li></a>
+          <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+       </ul>
+  </div>
+</nav>
+
+<!-- Div with logo, floats left -->
+  <div class="logo">
+      <%= image_tag("logo.png") %>
+  </div>
+
+  <!-- Main welcome, username filled in based on login information -->
+  <h1>Welcome, <%= @current_user.name %>!</h1>
+
+  <!-- Flash of success message if this is the first time the user has logged in because they just created account -->
+  <div class="success">
+    <% if flash[:notice] -%>
+      <p class='notice'><%=h flash[:notice] %></p>
+    <% end -%>
+  </div>
+
+  <h2>What would you like to do today?</h2>
+
+  <!-- Flexbox divs for teacher options of what to do now that they're logged in -->
+  <div class="flex">
+    <div class="toptions" id="points">
+      <h2>Give or Take Points</h2>
+    </div>
+    <div class="toptions" id="maintenance">
+      <h2>Maintenance</h2>
+    </div>
+  </div>
+
+</body>
+
+<!-- Footer -->
+  <div class="footer flexFooter">
+    <div class="left">
+      <p class="footerP">&#169; 2019 Class Sap</p>
+    </div>
+    <div class="middle">
+      <a href="https://github.com/abbeytipton/class_sap" target="new"><%= image_tag("github.png") %></a>
+    </div>
+    <div class="right">
+      <p class="footerP"><a href="/pages/about">Learn More</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/support">Contact Us</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/faq">FAQ</a>&nbsp;&nbsp;||&nbsp;&nbsp;classsapofficial@gmail.com</p>
+    </div>
+  </div>
+
+</html>
