@@ -6,9 +6,3 @@ This webapp is built with:
 
 * Rails 5.0.7.1
 
-# classsap
-# class-sap
-# class-sap
-# class-sap
-# sap
-# sap
