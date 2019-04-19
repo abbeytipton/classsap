@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.0.7', '>= 5.0.7.1'
 
 group :production do
-   gem 'pg'
+   gem 'pg', '~> 1.1.4'
  end
 
 group :development, :test do
