@@ -11,12 +11,8 @@ gem 'rails', '~> 5.0.7', '>= 5.0.7.1'
 
 group :production do
    gem 'pg'
-   gem 'rails_12factor'
  end
 
-group :development do
-   gem 'sqlite3'
- end
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
