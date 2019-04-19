@@ -17,7 +17,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'pg 1.1.4'
+gem 'pg' , '~> 1.1.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
