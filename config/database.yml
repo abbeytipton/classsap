@@ -1,26 +1,17 @@
 development:
   adapter: postgresql
-  encoding: utf8
-  database: classsap_development
+  encoding: unicode
+  database: class-sap_development
   pool: 5
-  username:
+  username: abbeytipton
   password:
+  timeout: 5000
 
-test: &TEST
+  test:
   adapter: postgresql
-  encoding: utf8
-  database: classsap_test
+  encoding: unicode
+  database: class-sap_test
   pool: 5
-  username:
+  username: abbeytipton
   password:
-
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: classsap_production
-  pool: 5
-  username:
-  password:
-
-cucumber:
-  <<: *TEST
+  timeout: 5000
