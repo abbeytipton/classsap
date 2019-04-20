@@ -83,12 +83,12 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
       :address   => "smtp.sendgrid.net",
-      :port      => 2525, # ports 587 and 2525 are also supported with STARTTLS
+      :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
       :enable_starttls_auto => true, # detects and uses STARTTLS
       :user_name => ENV["apikey"],
       :password  => ENV["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"], # SMTP password is any valid API key, when user_name is "apikey".
       :authentication => 'login',
-      :domain => 'class-sap.herokuapp.com/', # your domain to identify your server when connecting
+      :domain => 'herokuapp.com/', # your domain to identify your server when connecting
   }
 
   # Do not dump schema after migrations.
