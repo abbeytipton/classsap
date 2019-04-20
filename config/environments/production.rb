@@ -83,7 +83,7 @@ Rails.application.configure do
 
   ActionMailer::Base.smtp_settings = {
   	:address => "smtp.sendgrid.net",
-  	:port => 	587,
+  	:port => 	25,
   	:authentication => :plain,
   	:domain => ENV['classsapofficial@gmail.com'],
   	:user_name => ENV['apikey'],
