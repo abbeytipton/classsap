@@ -13,7 +13,7 @@ group :production do
    gem 'pg'
  end
 
-
+gem 'pg'
 
 
 # Use Puma as the app server
