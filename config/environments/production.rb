@@ -88,7 +88,7 @@ Rails.application.configure do
       :user_name => ENV["apikey"],
       :password  => ENV["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"], # SMTP password is any valid API key, when user_name is "apikey".
       :authentication => 'login',
-      :domain => 'herokuapp.com/', # your domain to identify your server when connecting
+      :domain => 'heroku.com', # your domain to identify your server when connecting
   }
 
   # Do not dump schema after migrations.
