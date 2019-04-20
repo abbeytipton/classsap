@@ -81,21 +81,14 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
-     config.action_mailer.smtp_settings = {
-         :enable_starttls_auto => true,
-         :address => 'smtp.gmail.com',
-         :port => 587,
-         :authentication => 'plain',
-         :domain => 'blarg.com',
-         :user_name => 'classsapofficial@gmail.com',
-         :password => 'Fram6123'
-       }
-
-      config.action_mailer.default_url_options = { :host => 'blarg.heroku.com' }
-       config.action_mailer.delivery_method = :smtp
-       config.action_mailer.perform_deliveries = true
-       config.action_mailer.raise_delivery_errors = true
-       config.action_mailer.default :charset => "utf-8"
+  ActionMailer::Base.smtp_settings = {
+  	:address => "smtp.gmail.com",
+  	:port => 587,
+  	:authentication => :plain,
+  	:domain => ENV['classsapofficial@gmail.com'],
+  	:user_name => ENV['classsapofficial@gmail.com'],
+  	:password => ENV['Fram6123'],
+  }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
