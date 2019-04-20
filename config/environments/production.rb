@@ -83,11 +83,11 @@ Rails.application.configure do
 
   ActionMailer::Base.smtp_settings = {
   	:address => "smtp.sendgrid.net",
-  	:port => 465,
+  	:port => 	25, 587
   	:authentication => :plain,
   	:domain => ENV['classsapofficial@gmail.com'],
   	:user_name => ENV['apikey'],
-  	:password => ENV['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'],
+  	:password => ENV['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'],
   }
 
   # Do not dump schema after migrations.
