@@ -85,7 +85,7 @@ Rails.application.configure do
   	:address => "smtp.sendgrid.net",
   	:port => 	'587',
   	:authentication => :plain,
-  	:domain => ENV['classsapofficial@gmail.com'],
+  	:domain => ENV['sendgrid.com'],
   	:user_name => ENV['apikey'],
   	:password => ENV['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'],
   }
