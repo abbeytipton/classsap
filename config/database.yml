@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: class-sap_development
+  database: classsap_development
   pool: 5
   username: abbeytipton
   password:
@@ -10,7 +10,7 @@ development:
   test:
   adapter: postgresql
   encoding: unicode
-  database: class-sap_test
+  database: classsap_test
   pool: 5
   username: abbeytipton
   password:
