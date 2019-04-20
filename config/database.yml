@@ -1,3 +1,21 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: classsap_development
+  pool: 5
+  username: abbeytipton
+  password:
+  timeout: 5000
+
+  test:
+  adapter: postgresql
+  encoding: unicode
+  database: classsap_test
+  pool: 5
+  username: abbeytipton
+  password:
+  timeout: 5000
+
 production:
   adapter: postgresql
   encoding: utf8
