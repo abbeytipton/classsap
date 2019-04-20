@@ -3,4 +3,3 @@ class DropInstalls < ActiveRecord::Migration
     drop_table :student_users
   end
 end
-end
