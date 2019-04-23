@@ -50,9 +50,17 @@
 <div class="flex">
   <!-- If the student has already bought something, their :week will be at 1, so this checks for that and tells them they can't buy if their :week is 1 -->
   <% if current_student_user.week == 1 %>
-    <div class="store">
-      <h2>You have already bought something this week. Come back next week!</h2><br>
-    </div>
+
+        <% @products = Product.all %>
+        <% @products.each do |product| %>
+        <div class="storeStudent">
+        <h4><%= product.name %></h4>
+        <!-- Emoji and item price -->
+        <h4><i class="em em-moneybag iclass"></i><%= product.price %></h4>
+        <!-- Submit button to buy -->
+        <h2>You have already bought something this week. Come back next week!</h2><br>
+      </div>
+      <% end %>
     <% else %>
     <% @products = Product.all %>
     <% @products.each do |product| %>

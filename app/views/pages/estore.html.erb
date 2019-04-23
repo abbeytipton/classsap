@@ -70,13 +70,13 @@
 
       <!-- Populates input tag with current price and then hidden field lets controller know a new price is coming -->
 
-      <span class="nameSpan">Price:</span><%= f.number_field :price, required: true, min: 0, :class => 'storeItem', placeholder: product.price %><br>
+      <span class="nameSpan">Price:</span><%= f.number_field :price, required: true, min: 1, :class => 'storeItem', placeholder: product.price %><br>
 
         <%= hidden_field_tag :price, :value => params[:price] %>
 
       <!-- Populates input tag with current quantity and then hidden field lets controller know a new quantity is coming -->
 
-      <span class="nameSpan">Quantity:</span><%= f.number_field :quantity,  required: true, min: 0, :class => 'storeItem', placeholder: product.quantity %>
+      <span class="nameSpan">Quantity:</span><%= f.number_field :quantity,  required: true, min: 1, :class => 'storeItem', placeholder: product.quantity %>
 
         <%= hidden_field_tag :quantity, :value => params[:quantity] %>
 
@@ -102,9 +102,9 @@
     <div class="flex">
     <!-- ERB code for adding new products -->
     <%= form_for Product.new do |f| %>
-    Name:<%= f.text_field :name, required: true %> <br/>
-    Price:<%= f.text_field :price, required: true %> <br>
-    Quantity:<%= f.text_field :quantity, required: true %> <br>
+    Name:<br><%= f.text_field :name, required: true, :class => 'storeItemNew' %> <br/>
+    Price:<br><%= f.number_field :price, required: true, min: 1, :class => 'storeItemNew' %> <br>
+    Quantity:<br><%= f.number_field :quantity, required: true, min: 1, :class => 'storeItemNew'%> <br>
     <!-- Hidden field makes the value of the product's teacher_id the same as the current user's ID -->
     <%= f.hidden_field :teacher_id, :value => @current_user.id %>
     <%= f.submit :class => 'submitStudent' %>

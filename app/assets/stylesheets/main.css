@@ -94,7 +94,7 @@ button:hover {
 
 /* Input field styling */
 
-input[type=text], input[type=email], input[type=password], .input {
+input[type=text], input[type=email], input[type=password], .input, .storeItem, input[type=number] {
   width: 80%;
   padding: 15px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -103,6 +103,10 @@ input[type=text], input[type=email], input[type=password], .input {
   border: 2px solid black;
   border-radius: 5px;
   outline: none;
+}
+
+input[type=text].storeItemNew, input[type=number].storeItemNew {
+  width: 80%;
 }
 
 input:focus {
@@ -236,15 +240,15 @@ textarea:focus {
 
 /* Points page */
 
-.students {
+.students, .products {
   background-color: #4dc4b3;
   text-align: left;
-  padding: 25px;
-  margin: 10px;
+  padding: 12px;
+  margin: 5px;
   border: 2px solid black;
   border-radius: 15px;
-  width: 80%;
-  min-height: 250px;
+  width: 70%;
+  min-height: 150px;
   cursor: pointer;
 }
 
@@ -261,23 +265,22 @@ textarea:focus {
 .give, .take, .takeBig {
   border: 2px solid black;
   border-radius: 8px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  padding: 7px;
+  margin-left: 5px;
+  margin-bottom: 3px;
+  padding: 5px;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   color: black;
   outline: none;
   cursor: pointer;
+  text-align: left;
 }
 
 .take, .takeBig {
   background-color: #f45b41;
 }
 
-.take {
-  width: 15%;
-}
+
 
 .takeBig {
   width: 35%;
@@ -319,7 +322,6 @@ textarea:focus {
   text-decoration: underline;
   font-size: 24px;
   margin-right: 5px;
-  padding: 10px;
   margin-bottom: 8px;
   text-align: left;
 }
@@ -392,13 +394,13 @@ textarea:focus {
 
 .store {
   background-color: #4dc4b3;
-  width: 80%;
-  padding: 20px;
+  width: 60%;
+  padding: 15px;
   margin: 10px;
   border: 2px solid black;
   border-radius: 8px;
   text-align: left;
-  min-height: 275px;
+  min-height: 175px;
 }
 
 .storeStudent {
@@ -649,8 +651,8 @@ button, .submit {
   width: 30%;
 }
 
-.students {
-  width: 40%;
+.students, .products {
+  width: 35%;
 }
 
 .studentModalContent {
@@ -658,7 +660,7 @@ button, .submit {
 }
 
 .store {
-  width: 50%;
+  width: 30%;
 }
 
 .tmessages {
@@ -726,11 +728,15 @@ h1 {
 }
 
 .students {
+  width: 12%;
+}
+
+.products {
   width: 20%;
 }
 
 .store {
-  width: 30%;
+  width: 20%;
 }
 
 input[type=text].storeItem, input[type=email].storeItem, input[type=password].storeItem, input[type=number] {
