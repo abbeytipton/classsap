@@ -65,16 +65,14 @@ Rails.application.configure do
   config.action_mailer.default_options = {from: 'classsapofficial@gmail.com'}
 
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'example.com',
-    user_name:            'classsapofficial@gmail.com',
-    password:             'Fram6123',
-    authentication:       'plain',
-    enable_starttls_auto: true
+      :address   => "smtp.sendgrid.net",
+      :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+      :enable_starttls_auto => true, # detects and uses STARTTLS
+      :user_name => "app131145132@heroku.com",
+      :password  => "a8l1kdlo7127", # SMTP password is any valid API key, when user_name is "apikey".
+      :authentication => 'login',
+      :domain => 'heroku.com', # your domain to identify your server when connecting
   }
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.exceptions_app = self.routes
