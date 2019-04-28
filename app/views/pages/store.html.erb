@@ -49,7 +49,7 @@
 <!-- Flexbox divs for store items -->
 <div class="flex">
   <!-- If the student has already bought something, their :week will be at 1, so this checks for that and tells them they can't buy if their :week is 1 -->
-  <% if current_student_user.week == 1 %>
+  <% if current_student_user.week == 2 %>
 
         <% @products = Product.all %>
         <% @products.each do |product| %>
