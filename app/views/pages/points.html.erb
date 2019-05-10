@@ -71,7 +71,6 @@
 
   <!-- List of current students, populated based on user's ID -->
   <% teacher_students.each do |student| %>
-    <% if student[:teacher_id] == @current_user.id %>
     <div class="students">
       <span class="nameSpan">Name:</span><span class="nameSpan2"><%= student.name %></span><br>
       <span class="nameSpan">Points:</span><span class="nameSpan2"><%= student.points %></span><br><br>
