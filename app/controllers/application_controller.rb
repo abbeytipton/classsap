@@ -18,7 +18,7 @@ helper_method [:student_messages]
 
   # Defines what a current user's students' are
     def teacher_students
-      @teacher_students ||= Student.where(teacher_id: current_user)
+      @teacher_students ||= Student.where(teacher_id: current_user).order(:name)
     end
 
   # Defines a single student to use in update form to give certain students points
