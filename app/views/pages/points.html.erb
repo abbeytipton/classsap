@@ -70,8 +70,7 @@
   </div>
 
   <!-- List of current students, populated based on user's ID -->
-  <% @students = Student.all %>
-  <% @students.each do |student| %>
+  <% teacher_students.each do |student| %>
     <% if student[:teacher_id] == @current_user.id %>
     <div class="students">
       <span class="nameSpan">Name:</span><span class="nameSpan2"><%= student.name %></span><br>
@@ -97,7 +96,6 @@
       <% end %>
       </div>
       </div>
-    <% end %>
     <% end %>
   </div>
 
