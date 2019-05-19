@@ -1,3 +1,3 @@
 every :sunday, at: '12pm' do
-  rake 'studenttask:resetweek', environment: :production
+  rake 'studenttask:resetweek', environment: :development
   end
