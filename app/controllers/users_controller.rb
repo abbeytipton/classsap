@@ -5,8 +5,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      # Sends welcome email to user's email address
-      #UserMailer.welcome_email(@user).deliver_now
       redirect_to '/pages/tlanding'
       flash[:notice] = " Welcome to Class Sap! Your account has been successfully created. "
     else
