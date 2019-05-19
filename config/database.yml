@@ -20,7 +20,7 @@ production:
   adapter: postgresql
   encoding: utf8
   database: class-sap
-  username: abbeyktipton@gmail.com
-  password: BKDwight26$
+  username:
+  password: 
   host: postgres://ivspuvfmaybwzh:5db25dcec8c6cb4c5f9a280cec7e960d45ee17b2eca4fec9b37b72a6192b7597@ec2-184-73-216-48.compute-1.amazonaws.com:5432/d9tmom50paf9sd
   sslmode: require
