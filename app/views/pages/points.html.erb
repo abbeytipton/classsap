@@ -29,6 +29,7 @@
             <% else %><a href="/pages/alerts"><li>Alerts</li></a>
           <% end %>
           <a href="/pages/profile"><li>Update Profile</li></a>
+          <!--<a href="/pages/support"><li>Support</li></a>-->
           <li><%= link_to "Logout", logout_path, method: "delete" %></li>
        </ul>
   </div>
@@ -69,46 +70,57 @@
   </div>
 
   <!-- List of current students, populated based on user's ID -->
+
   <% teacher_students.each do |student| %>
-    <div class="students">
+    <div class="students studentPoints">
       <span class="nameSpan">Name:</span><span class="nameSpan2"><%= student.name %></span><br>
       <span class="nameSpan">Points:</span><span class="nameSpan2"><%= student.points %></span><br><br>
-    <div class="flex">
-      <!-- This form shows the give and take point button and submits the value of the text to the controller -->
-      <%= form_for student do |f| %>
-        <%= f.submit "+ 1", class: 'give' %>
-        <%= f.submit "+ 2", class: 'give' %>
-        <%= f.submit "+ 3", class: 'give' %>
-        <%= f.submit "+ 5", class: 'give' %>
-        <%= f.submit "+ 10", class: 'give' %>
-        <%= f.submit "+ 20", class: 'give' %>
-        <%= f.submit "+ 50", class: 'give' %>
-        <%= f.submit "- 1", class: 'take' %>
-        <%= f.submit "- 2", class: 'take' %>
-        <%= f.submit "- 3", class: 'take' %>
-        <%= f.submit "- 5", class: 'take' %>
-        <%= f.submit "- 10", class: 'take' %>
-        <%= f.submit "- 20", class: 'take' %>
-        <%= f.submit "- 50", class: 'take' %>
-        <%= f.submit "Delete All", class: 'takeBig' %>
-      <% end %>
-      </div>
-      </div>
-    <% end %>
-  </div>
+    </div>
 
+      <!-- Modal for giving or taking points -->
+      <div id="studentModal" class="studentModal">
+        <div class="studentModalContent">
+          <!-- Close button -->
+          <span class="close">&times;</span>
+          <div class="flex">
+            <!-- This form shows the give and take point button and submits the value of the text to the controller -->
+          <%= form_for teacher_students do |f| %>
+              <%= f.submit "+ 1", class: 'give' %>
+              <%= f.submit "+ 2", class: 'give' %>
+              <%= f.submit "+ 3", class: 'give' %>
+              <%= f.submit "+ 5", class: 'give' %>
+              <%= f.submit "+ 10", class: 'give' %>
+              <%= f.submit "+ 20", class: 'give' %>
+              <%= f.submit "+ 50", class: 'give' %>
+              <%= f.submit "- 1", class: 'take' %>
+              <%= f.submit "- 2", class: 'take' %>
+              <%= f.submit "- 3", class: 'take' %>
+              <%= f.submit "- 5", class: 'take' %>
+              <%= f.submit "- 10", class: 'take' %>
+              <%= f.submit "- 20", class: 'take' %>
+              <%= f.submit "- 50", class: 'take' %>
+              <%= f.submit "Delete All", class: 'takeBig' %>
+
+
+          </div>
+
+        </div>
+
+      </div>
+  <% end %>
+<% end %>
 </body>
 
 <!-- Footer -->
   <div class="footer flexFooter">
     <div class="left">
-      <p class="footerP">&#169; 2019 Class Sap</p>
+      <p class="footerP">&#169; 2020 Class Sap</p>
     </div>
     <div class="middle">
-      <a href="https://github.com/abbeytipton/class_sap" target="new"><%= image_tag("github.png") %></a>
+      <a href="https://github.com/abbeytipton/sap" target="new"><%= image_tag("github.png") %></a>
     </div>
     <div class="right">
-      <p class="footerP"><a href="/pages/about">Learn More</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/faq">FAQ</a>&nbsp;&nbsp;||&nbsp;&nbsp;classsapofficial@gmail.com</p>
+      <p class="footerP"><a href="/pages/about">Learn More</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/faq">FAQ</a>
     </div>
   </div>
 
