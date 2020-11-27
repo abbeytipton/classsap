@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class Sap for Students</title>
+<!-- Link to CSS Stylesheet -->
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Source+Sans+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+<!-- Navigation menu divs and links -->
+<nav role="navigation">
+ <div id="menuToggle">
+    <input type="checkbox">
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="/pages/slanding"><li>Home<i class="em em-house iclass"></i></li></a>
+          <a href="/pages/spoints"><li>My Points<i class="em em-bar_chart iclass"></i></li></a>
+          <a href="/pages/store"><li>Store<i class="em em-department_store iclass"></i></li></a>
+          <!-- Checks for student message and if they exist, shows alert icon -->
+          <% if student_messages %>
+            <a href="/pages/smessages"><li>Messages<i class="em em-email iclass"></i><i class="material-icons" style="font-size:32px;color:crimson">error</i></li></a>
+            <% else %>
+              <a href="/pages/smessages"><li>Messages<i class="em em-email iclass"></i></li></a>
+          <% end %>
+          <li><%= link_to "Logout", slogout_path, method: "delete" %><i class="em em-unlock iclass"></i></li>
+       </ul>
+  </div>
+</nav>
+
+<!-- Div with logo, floats left -->
+  <div class="logo">
+      <%= image_tag("logo.png") %>
+  </div>
+
+<!-- Main welcome -->
+<h1>Welcome to the Class Sap Store!</h1>
+
+<!-- Hidden div that flashes message upon successful buy -->
+<div class="success">
+<% if flash[:notice] -%>
+  <p class='notice'><%=h flash[:notice] %></p>
+<% end -%>
+</div>
+
+<!-- Flexbox divs for store items -->
+<div class="flex">
+  <!-- If the student has already bought something, their :week will be at 1, so this checks for that and tells them they can't buy if their :week is 1 -->
+  <% if current_student_user.week == 1 %>
+
+        <% @products = Product.all %>
+        <% @products.each do |product| %>
+        <div class="storeStudent">
+        <h4><%= product.name %></h4>
+        <!-- Emoji and item price -->
+        <h4><i class="em em-moneybag iclass"></i><%= product.price %></h4>
+        <!-- Submit button to buy -->
+        <h2>You have already bought something this week. Come back next week!</h2><br>
+      </div>
+      <% end %>
+    <% else %>
+    <% @products = Product.all %>
+    <% @products.each do |product| %>
+    <!-- Finds products that belong to that user's teacher and have a quantity larger than 0 and lists them -->
+      <% if product[:teacher_id] == @current_student_user.teacher_id && product.quantity > 0 && %>
+      <!-- Checks to see if student has enough points to buy an item, if they don't, shows this div -->
+          <% if product.price > @current_student_user.points %>
+            <div class="storeStudent">
+              <h4><%= product.name %></h4>
+              <h4><i class="em em-moneybag iclass"></i><%= product.price %></h4>
+              <h4>You do not have enough points for this item!</h4>
+            </div>
+          <% else %>
+          <!-- If the student does have enough points, this div is shown for the product -->
+            <div class="storeStudent">
+              <!-- Form for a new message; this code connects to Messages controller as it sends a message to the student's teacher to tell them what has been bought -->
+              <%= form_for Message.new do |f| %>
+              <!-- Message to the teacher with each item included -->
+              <%= f.hidden_field :content, :value => 'Your student ' + @current_student_user.name + ', just bought ' + product.name + '. Today is ' + Time.now.strftime("%m/%d/%Y").to_s + '.' %> <br>
+              <!-- Selects the teacher that's connected to this student user by selecting that ID -->
+              <%= f.hidden_field :user_id, :value => @current_student_user.teacher_id %>
+              <!-- Stores the value of the item to deduct it from the student's points -->
+              <%= f.hidden_field :cost, :value => product.price %>
+              <!-- Stores the product ID to deduct from its quantity -->
+              <%= f.hidden_field :productid, :value => product.id %>
+              <h4><%= product.name %></h4>
+              <!-- Emoji and item price -->
+              <h4><i class="em em-moneybag iclass"></i><%= product.price %></h4>
+              <!-- Submit button to buy -->
+              <%= f.submit "Buy This Item", data: { confirm: "Are you sure?" }, class: "buyBtn" %>
+            </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+  <% end %>
+</div>
+
+</body>
+
+<!-- Footer -->
+  <div class="footer flexFooter">
+    <div class="left">
+      <p class="footerP">&#169; 2020 Class Sap</p>
+    </div>
+    <div class="middle">
+      <a href="https://github.com/abbeytipton/sap" target="new"><%= image_tag("github.png") %></a>
+    </div>
+    <div class="right">
+      <p class="footerP"><a href="/pages/about">Learn More</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/faq">FAQ</a>
+    </div>
+  </div>
+
+</html>
