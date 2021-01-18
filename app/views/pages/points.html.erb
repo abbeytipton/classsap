@@ -44,34 +44,10 @@
 <h1>Points</h1>
 <div class="flex">
 
-  <!-- Div for all students -->
-  <div class="students">
-    <span class="nameSpan">Name:</span><span class="nameSpan2">Everyone</span><br><br>
-    <div class="flex">
-      <!-- Form for updating all students that belong to that teacher -->
-      <%= form_for @students do |f| %>
-      <%= f.submit "+ 1 ", class: 'give' %>
-      <%= f.submit "+ 2 ", class: 'give' %>
-      <%= f.submit "+ 3 ", class: 'give' %>
-      <%= f.submit "+ 5 ", class: 'give' %>
-      <%= f.submit "+ 10 ", class: 'give' %>
-      <%= f.submit "+ 20 ", class: 'give' %>
-      <%= f.submit "+ 50 ", class: 'give' %>
-      <%= f.submit "- 1 ", class: 'take' %>
-      <%= f.submit "- 2 ", class: 'take' %>
-      <%= f.submit "- 3 ", class: 'take' %>
-      <%= f.submit "- 5 ", class: 'take' %>
-      <%= f.submit "- 10 ", class: 'take' %>
-      <%= f.submit "- 20 ", class: 'take' %>
-      <%= f.submit "- 50 ", class: 'take' %>
-      <%= f.submit "Delete All ", class: 'takeBig' %>
-      <% end %>
-    </div>
-  </div>
-
   <!-- List of current students, populated based on user's ID -->
-
-  <% teacher_students.each do |student| %>
+  <% @students = Student.all %>
+  <% @students.each do |student| %>
+    <% if student[:teacher_id] == @current_user.id %>
     <div class="students studentPoints">
       <span class="nameSpan">Name:</span><span class="nameSpan2"><%= student.name %></span><br>
       <span class="nameSpan">Points:</span><span class="nameSpan2"><%= student.points %></span><br><br>
@@ -84,7 +60,7 @@
           <span class="close">&times;</span>
           <div class="flex">
             <!-- This form shows the give and take point button and submits the value of the text to the controller -->
-          <%= form_for teacher_students do |f| %>
+          <%= form_for student do |f| %>
               <%= f.submit "+ 1", class: 'give' %>
               <%= f.submit "+ 2", class: 'give' %>
               <%= f.submit "+ 3", class: 'give' %>
@@ -108,6 +84,7 @@
 
       </div>
   <% end %>
+<% end %>
 <% end %>
 </body>
 
