@@ -43,7 +43,6 @@
 <!-- Main welcome -->
 <h1>Points</h1>
 <div class="flex">
-
   <!-- List of current students, populated based on user's ID -->
   <% @students = Student.all %>
   <% @students.each do |student| %>
@@ -73,10 +72,10 @@
               <%= f.submit "Delete All", class: 'takeBig' %>
             </div>
       </div>
-      </div>
   <% end %>
 <% end %>
 <% end %>
+</div>
 </body>
 
 <!-- Footer -->
