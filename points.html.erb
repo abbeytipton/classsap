@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class Sap for Teachers</title>
+<!-- Link to CSS Stylesheet -->
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Source+Sans+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+<!-- Navigation menu divs and links -->
+<nav role="navigation">
+ <div id="menuToggle">
+    <input type="checkbox">
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="/pages/tlanding"><li>Home</li></a>
+          <a href="/pages/points"><li>Give/Take Points</li></a>
+          <a href="/pages/estudents"><li>Edit Students</li></a>
+          <a href="/pages/estore"><li>Edit Store</li></a>
+          <a href="/pages/tmessages"><li>Message Students</li></a>
+        <!-- Checks to see if messages exist for that teacher and shows badge if they do -->
+          <% if messages %>
+            <a href="/pages/alerts"><li>Alerts<i class="material-icons" style="font-size:32px;color:red">error</i></li></a>
+        <!-- Else shows a normal link -->
+            <% else %><a href="/pages/alerts"><li>Alerts</li></a>
+          <% end %>
+          <a href="/pages/profile"><li>Update Profile</li></a>
+          <!--<a href="/pages/support"><li>Support</li></a>-->
+          <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+       </ul>
+  </div>
+</nav>
+
+<!-- Div with logo, floats left -->
+  <div class="logo">
+      <%= image_tag("logo.png") %>
+  </div>
+
+<!-- Main welcome -->
+<h1>Points</h1>
+<div class="flex">
+
+  <!-- Div for all students -->
+  <div class="students">
+    <span class="nameSpan">Name:</span><span class="nameSpan2">Everyone</span><br><br>
+    <div class="flex">
+      <!-- Form for updating all students that belong to that teacher -->
+      <%= form_for students do |f| %>
+      <%= f.submit "+ 1 ", class: 'give' %>
+      <%= f.submit "+ 2 ", class: 'give' %>
+      <%= f.submit "+ 3 ", class: 'give' %>
+      <%= f.submit "+ 5 ", class: 'give' %>
+      <%= f.submit "+ 10 ", class: 'give' %>
+      <%= f.submit "+ 20 ", class: 'give' %>
+      <%= f.submit "+ 50 ", class: 'give' %>
+      <%= f.submit "- 1 ", class: 'take' %>
+      <%= f.submit "- 2 ", class: 'take' %>
+      <%= f.submit "- 3 ", class: 'take' %>
+      <%= f.submit "- 5 ", class: 'take' %>
+      <%= f.submit "- 10 ", class: 'take' %>
+      <%= f.submit "- 20 ", class: 'take' %>
+      <%= f.submit "- 50 ", class: 'take' %>
+      <%= f.submit "Delete All ", class: 'takeBig' %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- List of current students, populated based on user's ID -->
+  <% @students = Student.all %>
+  <% @students.each do |student| %>
+    <% if student[:teacher_id] == @current_user.id %>
+    <div class="students studentPoints">
+      <span class="nameSpan">Name:</span><span class="nameSpan2"><%= student.name %></span><br>
+      <span class="nameSpan">Points:</span><span class="nameSpan2"><%= student.points %></span><br><br>
+    </div>
+
+      <!-- Modal for giving or taking points -->
+      <div id="studentModal" class="studentModal">
+        <div class="studentModalContent">
+          <!-- Close button -->
+          <span class="close">&times;</span>
+          <div class="flex">
+            <!-- This form shows the give and take point button and submits the value of the text to the controller -->
+          <%= form_for student do |f| %>
+              <%= f.submit "+ 1", class: 'give' %>
+              <%= f.submit "+ 2", class: 'give' %>
+              <%= f.submit "+ 3", class: 'give' %>
+              <%= f.submit "+ 5", class: 'give' %>
+              <%= f.submit "+ 10", class: 'give' %>
+              <%= f.submit "+ 20", class: 'give' %>
+              <%= f.submit "+ 50", class: 'give' %>
+              <%= f.submit "- 1", class: 'take' %>
+              <%= f.submit "- 2", class: 'take' %>
+              <%= f.submit "- 3", class: 'take' %>
+              <%= f.submit "- 5", class: 'take' %>
+              <%= f.submit "- 10", class: 'take' %>
+              <%= f.submit "- 20", class: 'take' %>
+              <%= f.submit "- 50", class: 'take' %>
+              <%= f.submit "Delete All", class: 'takeBig' %>
+
+
+          </div>
+
+        </div>
+
+      </div>
+  <% end %>
+<% end %>
+<% end %>
+</body>
+
+<!-- Footer -->
+  <div class="footer flexFooter">
+    <div class="left">
+      <p class="footerP">&#169; 2020 Class Sap</p>
+    </div>
+    <div class="middle">
+      <a href="https://github.com/abbeytipton/sap" target="new"><%= image_tag("github.png") %></a>
+    </div>
+    <div class="right">
+      <p class="footerP"><a href="/pages/about">Learn More</a>&nbsp;&nbsp;||&nbsp;&nbsp;<a href="/pages/faq">FAQ</a>
+    </div>
+  </div>
+
+</html>
