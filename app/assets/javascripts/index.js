@@ -83,7 +83,7 @@ document.addEventListener("turbolinks:load", function() {
 // Edit student page //
 
   // Shows modal for adding new student //
-  $("#newStudent").click(function() {
+  $("#newStudent, .studentPoints").click(function() {
     $('#studentModal').show();
   });
 
@@ -107,8 +107,8 @@ document.addEventListener("turbolinks:load", function() {
 // Points page //
 
   // Sound information //
-  let giveSound = new Audio('http://abbeytipton.com/projects/right_sound.mp3');
-  let takeSound = new Audio('http://abbeytipton.com/projects/wrong_sound.mp3');
+  let giveSound = new Audio('http://abbeytipton.info/right_sound.wav');
+  let takeSound = new Audio('http://abbeytipton.info/projects/wrong_sound.mp3');
 
   $('.give').click(function() {
      giveSound.play();
