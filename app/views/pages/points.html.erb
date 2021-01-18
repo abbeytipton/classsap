@@ -53,11 +53,6 @@
       <span class="nameSpan">Points:</span><span class="nameSpan2"><%= student.points %></span><br><br>
     </div>
 
-      <!-- Modal for giving or taking points -->
-      <div class="pointsModal">
-        <div class="studentModalContent">
-          <!-- Close button -->
-          <span class="close">&times;</span>
           <div class="flex">
             <!-- This form shows the give and take point button and submits the value of the text to the controller -->
           <%= form_for student do |f| %>
@@ -79,9 +74,6 @@
 
 
           </div>
-
-        </div>
-
       </div>
   <% end %>
 <% end %>
