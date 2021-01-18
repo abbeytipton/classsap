@@ -51,7 +51,7 @@
     <div class="students studentPoints">
       <span class="nameSpan">Name:</span><span class="nameSpan2"><%= student.name %></span><br>
       <span class="nameSpan">Points:</span><span class="nameSpan2"><%= student.points %></span><br><br>
-    </div>
+
 
           <div class="flex">
             <!-- This form shows the give and take point button and submits the value of the text to the controller -->
@@ -71,9 +71,8 @@
               <%= f.submit "- 20", class: 'take' %>
               <%= f.submit "- 50", class: 'take' %>
               <%= f.submit "Delete All", class: 'takeBig' %>
-
-
-          </div>
+            </div>
+      </div>
       </div>
   <% end %>
 <% end %>
