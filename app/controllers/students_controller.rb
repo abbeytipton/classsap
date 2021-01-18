@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
 # Updates the point value using the text value of the submit button that is pressed
   def update
      @student = Student.find(params[:id])
-     @students = @teacher_students
+     @students = teacher_students
      case params[:commit]
        # When the button is save changes, all the params are updated via input from the user
      when 'Save Changes'
