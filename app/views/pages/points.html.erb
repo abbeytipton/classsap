@@ -49,7 +49,7 @@
     <span class="nameSpan">Name:</span><span class="nameSpan2">Everyone</span><br><br>
     <div class="flex">
       <!-- Form for updating all students that belong to that teacher -->
-      <%= form_for students do |f| %>
+      <%= form_for @students do |f| %>
       <%= f.submit "+ 1 ", class: 'give' %>
       <%= f.submit "+ 2 ", class: 'give' %>
       <%= f.submit "+ 3 ", class: 'give' %>
@@ -71,7 +71,7 @@
 
   <!-- List of current students, populated based on user's ID -->
 
-  <% @teacher_students.each do |student| %>
+  <% teacher_students.each do |student| %>
     <div class="students studentPoints">
       <span class="nameSpan">Name:</span><span class="nameSpan2"><%= student.name %></span><br>
       <span class="nameSpan">Points:</span><span class="nameSpan2"><%= student.points %></span><br><br>
